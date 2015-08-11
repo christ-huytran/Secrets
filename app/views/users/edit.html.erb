@@ -1,0 +1,32 @@
+<div class='col-sm-offset-4 col-sm-4 col-md-offset-4 col-md-4 col-lg-offset-4 col-lg-4'>
+	<form action='/users/<%= @user.id %>' method='post'>
+		<input type='hidden' name='_method' value='patch'>
+		<input type='hidden' name='authenticity_token' value="<%= form_authenticity_token %>">
+		<div class="form-group">
+			<label for="name">Name</label>
+			<input type="text" class="form-control" id="name" name="name" placeholder="Name" value='<%= @user.name %>'>
+		</div>
+
+		<div class="form-group">
+			<label for="email">Email</label>
+			<input type="email" class="form-control" id="email" name="email" placeholder="Email" value='<%= @user.email %>'>
+		</div>
+
+		<button type="submit" class="btn btn-primary">Update</button>
+	</form>
+</div>
+
+<% if flash[:errors] %>
+	<% flash[:errors].each do |e| %>
+		<p><%= e %></p>
+	<% end %>
+<% end %>
+
+<div class='col-sm-offset-4 col-sm-4 col-md-offset-4 col-md-4 col-lg-offset-4 col-lg-4'>
+	<form action='/users/<%= @user.id %>' method='post'>
+		<input type='hidden' name='_method' value='delete'>
+		<input type='hidden' name='authenticity_token' value="<%= form_authenticity_token %>">
+
+		<input type="submit" class="btn btn-danger" value="Delete Account">
+	</form>
+</div>
