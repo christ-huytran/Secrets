@@ -19,6 +19,7 @@
 	<div class='col-sm-6 col-md-6 col-lg-6'>
 		<h3 class='text-center'>Secrets</h3>
 		<% @user.secrets.each do |s| %>
+		<p><%= s.likes.count %> likes</p>
 		<p class='text-center'><%= s.content %></p>
 		<%= simple_form_for s, html: {class: 'text-center'}, method: :delete do |f| %>
 			<%= f.hidden_field :id, value: s.id %>
@@ -28,5 +29,9 @@
 	</div>
 	<div class='col-sm-6 col-md-6 col-lg-6'>
 		<h3 class='text-center'>Secrets Liked</h3>
+		<% @user.secrets_liked.each do |sl| %>
+		<p class='text-center'><%= sl.content %></p>
+		<p><%= sl.likes.count %> likes</p>
+		<% end %>
 	</div>
 </div>

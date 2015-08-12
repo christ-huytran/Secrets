@@ -16,5 +16,9 @@ class ApplicationController < ActionController::Base
 		redirect_to "/users/#{current_user.id}" if current_user != user
 	end
 
-	helper_method :current_user
+	def unlike_button(user, secret)
+		Like.where(user: user, secret: secret)
+	end
+
+	helper_method :current_user, :unlike_button
 end

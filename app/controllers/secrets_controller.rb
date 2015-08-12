@@ -3,6 +3,9 @@ class SecretsController < ApplicationController
 
 	def index
 		@secrets = Secret.all
+		@like = Like.new
+		user = User.find session[:id]
+		@unlike = Like.where(user: user)[0]
 	end
 
 	def create
