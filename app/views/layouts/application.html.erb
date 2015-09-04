@@ -22,7 +22,7 @@
 			<ul class="nav navbar-nav navbar-right">
 				<li>
 					<% if current_user %>
-						<a><%= button_to("Log Out", session_path, :method => 'delete', :class => 'btn btn-danger') %></a>
+						<%= button_to "Log Out", session_path(current_user), :method => 'delete', :class => 'btn btn-danger' %>
 					<% end %>
 				</li>
 			</ul>
