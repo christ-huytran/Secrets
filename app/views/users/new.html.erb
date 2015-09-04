@@ -1,4 +1,9 @@
 <div class='col-sm-offset-4 col-sm-4 col-md-offset-4 col-md-4 col-lg-offset-4 col-lg-4'>
+	<div class="bs-callout bs-callout-danger">
+		<h4 class="orange-color">Tired of keeping secrets to yourself?</h4>
+		<h4 class="orange-color">Leave them with us!</h4>
+	</div>
+	<h2 class="text-center">Sign up</h2>
 	<form action='/users' method='post'>
 		<input type='hidden' name='authenticity_token' value="<%= form_authenticity_token %>">
 		<div class="form-group">
@@ -23,6 +28,9 @@
 
 		<button type="submit" class="btn btn-primary">Join</button>
 	</form>
+	<div class="bs-callout bs-callout-danger">
+		<%= link_to("Already have an account?", new_session_path, {class: "orange-color"}) %>
+	</div>
 </div>
 
 <% if flash[:errors] %>

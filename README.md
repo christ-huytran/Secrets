@@ -12,6 +12,11 @@ A Ruby on Rails app that allows registered users to share their secrets anonymou
 bundle install
 ```
 ```
+# Create/migrate database
+rake db:create
+rake db:migrate
+```
+```
 # Run PostgreSQL
 postgres -D /usr/local/var/postgres
 ```

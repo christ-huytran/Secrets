@@ -17,21 +17,25 @@
 
 <div class='row'>
 	<div class='col-sm-6 col-md-6 col-lg-6'>
-		<h3 class='text-center'>Secrets</h3>
+		<h3 class='text-center orange-color'>Secrets</h3>
 		<% @user.secrets.each do |s| %>
-		<p class='text-center'><%= s.content %></p>
-		<p class='text-center'><%= s.likes.count %> likes</p>
-		<%= simple_form_for s, html: {class: 'text-center'}, method: :delete do |f| %>
-			<%= f.hidden_field :id, value: s.id %>
-			<%= f.button :submit, "Delete", class: 'btn btn-danger' %>
-		<% end %>
+		<div class="bs-callout bs-callout-danger">
+			<p class='text-center white-color'><%= s.content %></p>
+			<p class='text-center blue-color'><%= s.likes.count %> likes</p>
+			<%= simple_form_for s, html: {class: 'text-center'}, method: :delete do |f| %>
+				<%= f.hidden_field :id, value: s.id %>
+				<%= f.button :submit, "Delete", class: 'btn btn-danger' %>
+			<% end %>
+		</div>
 		<% end %>
 	</div>
 	<div class='col-sm-6 col-md-6 col-lg-6'>
-		<h3 class='text-center'>Secrets Liked</h3>
+		<h3 class='text-center orange-color'>Secrets Liked</h3>
 		<% @user.secrets_liked.each do |sl| %>
-		<p class='text-center'><%= sl.content %></p>
-		<p class='text-center'><%= sl.likes.count %> likes</p>
+		<div class="bs-callout bs-callout-success">
+		<p class='text-center white-color'><%= sl.content %></p>
+		<p class='text-center blue-color'><%= sl.likes.count %> likes</p>
+		</div>
 		<% end %>
 	</div>
 </div>
