@@ -17,10 +17,10 @@
 
 <div class='row'>
 	<div class='col-sm-6 col-md-6 col-lg-6'>
-		<h3 class='text-center orange-color'>Secrets</h3>
+		<h3 class='text-center orange-color'>Your Secrets</h3>
 		<% @user.secrets.each do |s| %>
-		<div class="bs-callout bs-callout-danger">
-			<p class='text-center white-color'><%= s.content %></p>
+		<div class="bs-callout bs-callout-danger transparent">
+			<h3 class='text-center'><%= s.content %></h3>
 			<p class='text-center blue-color'><%= s.likes.count %> likes</p>
 			<%= simple_form_for s, html: {class: 'text-center'}, method: :delete do |f| %>
 				<%= f.hidden_field :id, value: s.id %>
@@ -30,10 +30,10 @@
 		<% end %>
 	</div>
 	<div class='col-sm-6 col-md-6 col-lg-6'>
-		<h3 class='text-center orange-color'>Secrets Liked</h3>
+		<h3 class='text-center orange-color'>Secrets You Liked</h3>
 		<% @user.secrets_liked.each do |sl| %>
-		<div class="bs-callout bs-callout-success">
-		<p class='text-center white-color'><%= sl.content %></p>
+		<div class="bs-callout bs-callout-success transparent">
+		<h3 class='text-center'><%= sl.content %></h3>
 		<p class='text-center blue-color'><%= sl.likes.count %> likes</p>
 		</div>
 		<% end %>

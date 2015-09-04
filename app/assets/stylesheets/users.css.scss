@@ -3,6 +3,8 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 $brand-primary: #337ab7;
+$brand-danger: 	#d9534f;
+$brand-info:    #5bc0de;
 
 .orange-color {
 	/*color: #f05f40;*/
@@ -16,4 +18,12 @@ $brand-primary: #337ab7;
 .blue-color {
 	/*color: #337ab7;*/
 	color: $brand-primary;
+}
+
+.red-color {
+	color: $brand-danger;
+}
+
+.transparent{
+	background:rgba(255,255,255,0.5);
 }
